@@ -16,6 +16,9 @@ runs/
 models/
 *.pth
 
-# Images
-*.jpg
-*.png
+# System
+.DS_Store
+
+# Optional: ignore only generated images (not all images)
+gradcam_results/*.jpg
+outputs/*.png
