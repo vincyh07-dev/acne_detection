@@ -1,0 +1,21 @@
+# Python
+.venv/
+__pycache__/
+
+# Data
+acne04/
+data/
+
+# Outputs
+gradcam_results/
+dermnet_results/
+outputs/
+runs/
+
+# Models
+models/
+*.pth
+
+# Images
+*.jpg
+*.png
