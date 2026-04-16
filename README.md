@@ -1,5 +1,43 @@
 # Acne Detection and Classification
 
+## Overview
+This project implements a complete pipeline for acne analysis using deep learning. It consists of two main components: 
+- Part 1: Detection — Detect acne regions using object detection models (YOLOv8 and Faster R-CNN)
+- Part 2: Classification — Classify acne severity and visualize model attention using Grad-CAM
+
+## Project Structure
+acne_project/
+├── part1_detection/
+│   ├── train_yolo.py
+│   ├── train_faster_rcnn.py
+│   ├── infer.py
+│   ├── batch_infer.py
+│   ├── evaluation.py
+│   └── extract_patches.py
+│
+├── part2_classification/
+│   ├── train_classifier.py
+│   ├── test_dermnet.py
+│   └── gradcam_dermnet.py
+│
+├── README.md
+├── .gitignore
+
+## Dataset 
+ACNE04: https://universe.roboflow.com/acne-vulgaris-detection/acne04-detection
+DermNet: https://www.kaggle.com/datasets/shubhamgoel27/dermnet
+
+Place dataset in 
+acne04/ 
+|── train/ 
+├── val/
+
+## Part 1: Acne Detection
+
+## Models Used
+- YOLOv8 (real-time detection)
+- Faster R-CNN (region-based detection)
+
 ## Setup
 cd acne_project
 source .venv/bin/activate
@@ -38,6 +76,9 @@ python part1_detection/batch_infer.py
 
 ## Part 2: Classification
 
+## Model
+CNN-based classifier (DermNet-style architecture)
+
 ### Create patches
 python part2_classification/extract_patches.py
 
@@ -50,8 +91,12 @@ python part2_classification/test_dermnet.py
 ### Generate Grad-CAM visualizations
 python part2_classification/gradcam_dermnet.py
 
-### DermNet Evaluation Results
+### Classification Results
 Accuracy: 0.6353
 F1-score: 0.1176
 AUROC: 0.5712
 Predicted Acne: 5589 / 15557
+
+## Outputs
+Detection outputs are saved in runs/
+Classification outputs and Grad-CAM visualizations are generated during evaluation
